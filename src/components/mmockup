@@ -1,0 +1,17 @@
+      <div>
+      <div><input type="text" className="search" placeholder="Search" onChange={event => { setsearchItem(event.target.value) }} /></div>
+      {data.filter((datum)=> {
+        if (searchItem == "") {
+          return datum
+        } else if (datum.first_name.toLowerCase().includes(searchItem.toLocaleLowerCase())) {
+          return datum
+        }
+      }).map((datum, key) => {
+        return (
+          <div className="data" key={key}>
+            <p>{ datum.first_name}</p>
+          </div>
+        )
+      })
+      }
+    </div>
